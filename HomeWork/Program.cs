@@ -22,36 +22,35 @@ namespace HomeWork
         {
             int i;
 
-            for (i = 0; number > 1; i++)
+            for (i = 0; number > 1; i++)         // Считаем сколько элементов в массиве
             {
-                number = number / 2;
-
+                
                 if (number % 2 != 0)
                 {
                     number = Math.Floor(number);
                 }
+                number = number / 2;
             }
 
-            double[] array = new double[i];
+            double[] array = new double[i];          // Создаем массив
+            double fixNumber2 = fixNumber;
 
-            for (int j = 0; fixNumber > 1; j++)
+            for (int j = 0; fixNumber > 1; j++)  // Записываем в массив числов двоичной системе
             {
                 
-                fixNumber = fixNumber / 2;
-
-                for (int k = 0; k < array.Length; k++)
-                {
-                    Console.WriteLine(array[i] + " ");
-                }
+                fixNumber = Math.Floor(fixNumber / 2);
+                fixNumber2 = fixNumber % 2;
+                           
+                array[j] = fixNumber2;
+              
             }
 
 
-
-            for (int k = 0; k < array.Length; k++)
+            for (int k = array.Length-1; k != 0; k--)  // выводим в обратном порядке
             {
-                Console.WriteLine(array[i] + " ");
+                Console.Write(array[k] + " ");
             }
-
+            Console.WriteLine();
 
         }
 
